@@ -1,0 +1,13 @@
+interface: lo
+bpf: "tcp or udp"
+interval_ms: 1000
+snaplen: 128
+evict_idle_s: 120
+rules:
+  port_scan_ports: 15
+  rate_spike_multiple: 5.0
+  syn_flood_ratio: 0.8
+notify:
+  webhook: "http://127.0.0.1:8080/webhook"
+  log_file: "ids.log"
+  cooldown_s: 300
